@@ -36,13 +36,13 @@ cuda=12.1
 pytorch=1.12.1
 python=3.8
 ```
-`pip install timm -i https://mirrors.bfsu.edu.cn/pypi/web/simple`
-`pip install antialiased_cnns`
-`pip install -U openmim`
-`mim install mmcv-full`
-`mim install mmdet`
-`cd /datasets/train_LWGA/detection  pip install -v -e .`
-`cd /ultralytics   pip install -e .`
+`pip install timm -i https://mirrors.bfsu.edu.cn/pypi/web/simple`  
+`pip install antialiased_cnns`  
+`pip install -U openmim`  
+`mim install mmcv-full`  
+`mim install mmdet`  
+`cd /datasets/train_LWGA/detection  pip install -v -e .`  
+`cd /ultralytics   pip install -e .`  
 >目录结构
 ```
 UI界面目录：datasets/ui_final/
