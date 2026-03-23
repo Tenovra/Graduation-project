@@ -1,3 +1,4 @@
 # Graduation-project
 Introducing the swin-transformer module on yolov8  
-使用数据集：[https://gitee.com/open-rs/HRSC2016](https://www.kaggle.com/datasets/guofeng/hrsc2016)
+使用数据集：[https://gitee.com/open-rs/HRSC2016](https://www.kaggle.com/datasets/guofeng/hrsc2016)  
+关于数据处理：
