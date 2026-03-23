@@ -1,0 +1,615 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>目标类型统计</title>
+            <script src="./assets/echarts.min.js"></script>
+            <style>
+                .chart-container { height: 650px; width: 100%; }
+                .button-container { text-align: center; margin: 5px 0; }
+                button { padding: 5px 10px; margin: 0 5px; cursor: pointer; font-size: 14px; }
+                .active { background-color: #3498db; color: white; }
+                h2 { text-align: center; margin-top: 0; margin-bottom: 5px; font-size: 18px; }
+                body { display: flex; flex-direction: column; }
+                .chart-wrapper { flex: 1; display: flex; justify-content: center; align-items: center; }
+            </style>
+        </head>
+        <body>
+            <!-- 隐藏图表标题 -->
+            <div class="button-container">
+                <button id="treemapBtn" onclick="showChart('treemap')">矩形树图</button>
+                <button id="sunburstBtn" class="active" onclick="showChart('sunburst')">旭日图</button>
+            </div>
+            <div class="chart-wrapper">
+                <div id="treemap" class="chart-container" style="display:none;"></div>
+                <div id="sunburst" class="chart-container"></div>
+            </div>
+            
+            <script type="text/javascript">
+                // 树图脚本
+                
+            var chart_b7924ba965a7431bb77938a211476563 = echarts.init(document.getElementById('treemap'), 'light', {renderer: 'canvas'});
+            var option_b7924ba965a7431bb77938a211476563 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "treemap",
+            "name": "\u76ee\u6807\u7c7b\u578b\u7edf\u8ba1",
+            "data": [
+                {
+                    "name": "Aircraft carrier",
+                    "children": [
+                        {
+                            "name": "admin",
+                            "children": [
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 631
+                                },
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 233
+                                },
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 7
+                                }
+                            ]
+                        },
+                        {
+                            "name": "a",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 101
+                                },
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "name": "user2",
+                            "children": [
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 3
+                                }
+                            ]
+                        },
+                        {
+                            "name": "user1",
+                            "children": [
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 2
+                                },
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Merchant ship",
+                    "children": [
+                        {
+                            "name": "admin",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 173
+                                },
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 14
+                                }
+                            ]
+                        },
+                        {
+                            "name": "a",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 116
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Warcraft",
+                    "children": [
+                        {
+                            "name": "a",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 102
+                                }
+                            ]
+                        },
+                        {
+                            "name": "admin",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 102
+                                },
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 8
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "\u52a8\u7269",
+                    "children": [
+                        {
+                            "name": "user2",
+                            "children": [
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 3
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "\u4eba",
+                    "children": [
+                        {
+                            "name": "user1",
+                            "children": [
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "\u8f66\u8f86",
+                    "children": [
+                        {
+                            "name": "user1",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "width": "80%",
+            "height": "80%",
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "formatter": "{b}\n{c}",
+                "valueAnimation": false
+            },
+            "upperLabel": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "leafDepth": 3,
+            "drillDownIcon": "\u25b6",
+            "roam": false,
+            "zoomToNodeRatio": 0.1024,
+            "visualMin": 5,
+            "visualMax": 50,
+            "colorMappingBy": "index",
+            "visibleMin": 10,
+            "breadcrumb": {
+                "show": false,
+                "left": "center",
+                "right": "auto",
+                "top": "auto",
+                "bottom": 0,
+                "height": 22,
+                "emptyItemWidth": 25,
+                "itemStyle": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u76ee\u6807\u7c7b\u578b\u7edf\u8ba1"
+            ],
+            "selected": {},
+            "show": false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "formatter": "{b}: {c}",
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": false,
+            "text": "\u76ee\u6807\u7c7b\u578b\u7edf\u8ba1",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "0",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+            chart_b7924ba965a7431bb77938a211476563.setOption(option_b7924ba965a7431bb77938a211476563);
+            
+                
+                // 旭日图脚本
+                
+            var chart_5c1123af42c94d2d85c825b746cfa883 = echarts.init(document.getElementById('sunburst'), 'light', {renderer: 'canvas'});
+            var option_5c1123af42c94d2d85c825b746cfa883 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "sunburst",
+            "name": "\u76ee\u6807\u7c7b\u578b\u7edf\u8ba1",
+            "data": [
+                {
+                    "name": "Aircraft carrier",
+                    "children": [
+                        {
+                            "name": "admin",
+                            "children": [
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 631
+                                },
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 233
+                                },
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 7
+                                }
+                            ]
+                        },
+                        {
+                            "name": "a",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 101
+                                },
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "name": "user2",
+                            "children": [
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 3
+                                }
+                            ]
+                        },
+                        {
+                            "name": "user1",
+                            "children": [
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 2
+                                },
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Merchant ship",
+                    "children": [
+                        {
+                            "name": "admin",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 173
+                                },
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 14
+                                }
+                            ]
+                        },
+                        {
+                            "name": "a",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 116
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Warcraft",
+                    "children": [
+                        {
+                            "name": "a",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 102
+                                }
+                            ]
+                        },
+                        {
+                            "name": "admin",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 102
+                                },
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 8
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "\u52a8\u7269",
+                    "children": [
+                        {
+                            "name": "user2",
+                            "children": [
+                                {
+                                    "name": "\u5b9e\u65f6\u68c0\u6d4b",
+                                    "value": 3
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "\u4eba",
+                    "children": [
+                        {
+                            "name": "user1",
+                            "children": [
+                                {
+                                    "name": "\u56fe\u50cf\u68c0\u6d4b",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "\u8f66\u8f86",
+                    "children": [
+                        {
+                            "name": "user1",
+                            "children": [
+                                {
+                                    "name": "\u89c6\u9891\u68c0\u6d4b",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "radius": [
+                "10%",
+                "95%"
+            ],
+            "highlightPolicy": "descendant",
+            "sort": "desc",
+            "renderLabelForZeroData": false,
+            "clockwise": true,
+            "startAngle": 90,
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "formatter": "{b}\n{c}",
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "borderColor": "rgba(255,255,255,.5)",
+                "borderWidth": 1
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "formatter": "{b}: {c}",
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": false,
+            "text": "\u76ee\u6807\u7c7b\u578b\u7edf\u8ba1",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "0",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+            chart_5c1123af42c94d2d85c825b746cfa883.setOption(option_5c1123af42c94d2d85c825b746cfa883);
+            
+                
+                // 切换图表显示
+                function showChart(chartType) {                    
+                    if (chartType === 'treemap') {                        
+                        document.getElementById('treemap').style.display = 'block';
+                        document.getElementById('sunburst').style.display = 'none';
+                        document.getElementById('treemapBtn').classList.add('active');
+                        document.getElementById('sunburstBtn').classList.remove('active');
+                    } else {                        
+                        document.getElementById('treemap').style.display = 'none';
+                        document.getElementById('sunburst').style.display = 'block';
+                        document.getElementById('treemapBtn').classList.remove('active');
+                        document.getElementById('sunburstBtn').classList.add('active');
+                    }
+                    
+                    // 调整图表大小以适应容器
+                    if (chartType === 'treemap') {
+                        chart_b7924ba965a7431bb77938a211476563.resize();
+                    } else {
+                        chart_5c1123af42c94d2d85c825b746cfa883.resize();
+                    }
+                }
+                
+                // 默认显示旭日图
+                showChart('sunburst');
+                
+                // 自动切换图表显示（每5秒切换一次）
+                let currentOption = 'sunburst';
+                setInterval(function() {
+                    currentOption = currentOption === 'treemap' ? 'sunburst' : 'treemap';
+                    showChart(currentOption);
+                }, 5000);
+                
+                // 窗口大小变化时调整图表大小
+                window.addEventListener('resize', function() {
+                    chart_b7924ba965a7431bb77938a211476563.resize();
+                    chart_5c1123af42c94d2d85c825b746cfa883.resize();
+                });
+            </script>
+        </body>
+        </html>
+        

@@ -1,0 +1,151 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>使用日历饼图</title>
+            <script src="./assets/echarts.min.js"></script>
+        </head>
+        <body>
+            <div id="calendar" style="width:100%; height:300px;"></div>
+            <script type="text/javascript">
+                var chart = echarts.init(document.getElementById('calendar'), 'light', {renderer: 'canvas'});
+        
+                // 基础日历图配置
+                var option = {
+                    title: {
+                        text: "使用日历饼图",
+                        left: "center",
+                        show: false
+                    },
+                    tooltip: {
+                        formatter: "{b}: {c}"
+                    },
+                    legend: {
+                        show: true,
+                        top: "5%",
+                        orient: "horizontal",
+                        itemWidth: 25,
+                        itemHeight: 14,
+                        itemGap: 15
+                    },
+                    calendar: {
+                        top: "middle",
+                        left: "center",
+                        cellSize: [60, 40],
+                        range: ["2025-11-01", "2025-11-30"],
+                        orient: "vertical",
+                        dayLabel: {
+                            show: true,
+                            firstDay: 1,
+                            nameMap: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+                            color: "#333",
+                            fontSize: 12,
+                            position: "top"
+                        },
+                        itemStyle: {
+                            borderWidth: 1,
+                            borderColor: '#ccc',
+                            color: '#f5f5f5'
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#ccc',
+                                width: 1,
+                                type: 'solid'
+                            }
+                        },
+                        monthLabel: {
+                            show: true
+                        },
+                        yearLabel: {
+                            show: false
+                        }
+                    },
+                    series: [
+                        // 数据散点图 - 用于显示饼图
+                        {
+                            type: 'scatter',
+                            coordinateSystem: 'calendar',
+                            symbolSize: 0,
+                            itemStyle: {
+                                color: 'rgba(0, 0, 0, 0)'  // 透明色
+                            },
+                            data: [["2025-10-03", 13], ["2025-10-04", 19], ["2025-10-05", 15], ["2025-10-06", 14], ["2025-10-07", 17], ["2025-10-08", 14], ["2025-10-09", 19], ["2025-10-10", 17], ["2025-10-11", 11], ["2025-10-12", 18], ["2025-10-13", 22], ["2025-10-14", 19], ["2025-10-15", 6], ["2025-10-16", 18], ["2025-10-17", 7], ["2025-10-18", 18], ["2025-10-19", 16], ["2025-10-20", 8], ["2025-10-21", 10], ["2025-10-22", 14], ["2025-10-23", 23], ["2025-10-24", 21], ["2025-10-25", 19], ["2025-10-26", 17], ["2025-10-27", 13], ["2025-10-28", 13], ["2025-10-29", 27], ["2025-10-30", 19], ["2025-10-31", 19], ["2025-11-01", 10]]
+                        },
+                        // 日期标签散点图 - 专门用于显示日期
+                        {
+                            type: 'scatter',
+                            coordinateSystem: 'calendar',
+                            symbolSize: 1,
+                            symbol: 'circle',
+                            zlevel: 2,  // 确保日期标签显示在饼图上方
+                            label: {
+                                show: true,
+                                formatter: function(params) {
+                                    // 获取日期的天数部分
+                                    var date = new Date(params.value[0]);
+                                    return date.getDate();
+                                },
+                                color: '#333',
+                                position: 'inside',
+                                fontSize: 14,
+                                fontWeight: 'bold',
+                                distance: 0,
+                                align: 'center',
+                                verticalAlign: 'middle',
+                                backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                                borderRadius: 10,
+                                padding: [2, 2, 2, 2],
+                                emphasis: {
+                                    show: true,
+                                    color: '#000'
+                                }
+                            },
+                            itemStyle: {
+                                color: 'rgba(0, 0, 0, 0)'  // 透明色
+                            },
+                            // 生成当月所有日期的数据
+                            data: (function() {
+                                var data = [];
+                                var date = new Date('2025-11-01');
+                                var year = date.getFullYear();
+                                var month = date.getMonth();
+                                var lastDay = new Date(year, month + 1, 0).getDate();
+                                
+                                for (var i = 1; i <= lastDay; i++) {
+                                    // 确保日期格式正确，使用两位数表示月和日
+                                    var monthStr = (month + 1).toString().padStart(2, '0');
+                                    var dayStr = i.toString().padStart(2, '0');
+                                    var dateStr = year + '-' + monthStr + '-' + dayStr;
+                                    data.push([dateStr, 0]);
+                                }
+                                return data;
+                            })()
+                        }
+                    ]
+                };
+        
+                // 添加饼图系列到option中
+                var pieSeries = [{"type": "pie", "id": "pie-2025-11-01", "coordinateSystem": "calendar", "center": "2025-11-01", "radius": 15, "label": {"show": false}, "zlevel": 1, "data": [{"name": "\u56fe\u50cf\u68c0\u6d4b", "value": 3}, {"name": "\u89c6\u9891\u68c0\u6d4b", "value": 5}, {"name": "\u5b9e\u65f6\u68c0\u6d4b", "value": 2}]}];
+                for (var i = 0; i < pieSeries.length; i++) {
+                    option.series.push(pieSeries[i]);
+                }
+                
+                // 设置日期标签样式
+                option.calendar.dayLabel.nameMap = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+                option.calendar.dayLabel.color = "#333";
+                option.calendar.dayLabel.fontSize = 12;
+                option.calendar.dayLabel.position = "left";
+                
+                // 确保日期标签显示在日历单元格中
+                option.calendar.itemStyle.borderWidth = 1;
+                option.calendar.itemStyle.borderColor = '#ccc';
+                option.calendar.itemStyle.borderRadius = 0;
+                
+                chart.setOption(option);
+            </script>
+        </body>
+        </html>
+        

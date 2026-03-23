@@ -1,0 +1,19 @@
+path: E:\bishe\ultralytics-main\datasets
+#path: /hy-tmp/ultralytics-main/datasets
+#/hy-tmp/ultralytics-main/datasets
+
+train: train/images
+val: val/images
+test: test/images
+#val: test/images
+
+#train: /hy-tmp/ultralytics-main/datasets/train/images
+#val: /hy-tmp/ultralytics-main/datasets/val/images
+#test: /hy-tmp/ultralytics-main/datasets/test/images
+
+nc: 4
+names:
+  0: Aircraft carrier #航母
+  1: Warcraft #军舰
+  2: Merchant ship #货船
+  3: Submarine #潜艇
