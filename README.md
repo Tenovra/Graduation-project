@@ -49,9 +49,11 @@ UI界面目录：datasets/ui_final/
 网络模型训练：datasets/train_LWGA.py
 网络模型结构：datasets/yolov8-obb-LWGA.yaml
 ```
->标注格式转换  
+>标注格式转换
+
 `Tools/xml_to_dota.py`  
 `Tools/dota_drawed.py`  
 `Tools/dota_to_yolo.py`  
->UI界面  
+>UI界面
+
 `datasets/ui_final`  
