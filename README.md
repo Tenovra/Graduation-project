@@ -5,7 +5,7 @@ Introducing the swin-transformer module on yolov8
 数据集：HRSC6
 标注格式：OBB
 图片格式：bmp
-处理：XML->DOTA->通过绘制旋转框查看labels是否正确->TXT格式(YOLO支持)
+标注格式处理：XML->DOTA->通过绘制旋转框查看labels是否正确->TXT格式(YOLO支持)
 注：每个目标的类别和四个顶点坐标（x1,y1,x2,y2,x3,y3,x4,y4）。然后将训练集按照8：2的比例划分为训练集和测试集
 分类：Warcraft（军舰），Aircraft carrier（航母），Merchant ship（货船），Submarine（潜艇）
 ```
