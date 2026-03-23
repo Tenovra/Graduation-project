@@ -2,7 +2,7 @@
 Introducing the swin-transformer module on yolov8  
 >关于数据集以及处理：
 ```txt
-数据集：HRSC6
+数据集：HRSC2016
 标注格式：OBB
 图片格式：bmp
 标注格式处理：XML->DOTA->通过绘制旋转框查看labels是否正确->TXT格式(YOLO支持)
